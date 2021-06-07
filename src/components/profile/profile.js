@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Profile = (props) => {
+const Profile = ({props}) => {
     return (
         <div class="profile">
             <div class="description">
