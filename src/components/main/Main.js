@@ -1,35 +1,30 @@
-import React from 'react';
+import React from "react";
 
-import userData from '../../data/user.json';
-import Profile from '../profile/profile';
-
-import statisticData from "../../data/statisticalData.json";
-import Statistics from "../statistics/statistics";
-
-import friendsData from "../../data/friends.json";
-import FriendList from "../friendList/friendList";
-
-import transactionData from "../../data/transaction.json";
+import Profile from "../profile/Profile";
+import Statistics from "../statistics/Statistics";
+import FriendList from "../friendList/FriendList";
 import TransactionHistory from "../tratsactionHistory/TransactionHistory";
+import Section from "../section/Section";
 
+import data from "../../data";
 
 const Main = () => {
-    return (
-     <main>
-      <h2>Profile-component</h2>
-      <Profile  props={userData}
-    
-      />
-      <h2>Statistics-component</h2>
-      <Statistics statistika={statisticData} title="Upload stats" />
-
-      <h2>FriendList-component</h2>
-      <FriendList friends={friendsData} />
-      
-      <h2>Transaction-component</h2>
-      <TransactionHistory transactions={transactionData} />;
-     </main>
-    );
-}
+ return (
+  <>
+   <Section title="Profile-component">
+    <Profile props={data.userData} />
+   </Section>
+   <Section title="Statistics-component">
+    <Statistics statistika={data.statisticData} title="Upload stats" />
+   </Section>
+   <Section title="FriendList-component">
+    <FriendList friends={data.friendsData} />
+   </Section>
+   <Section title="Transaction-component">
+    <TransactionHistory transactions={data.transactionData} />;
+   </Section>
+  </>
+ );
+};
 
 export default Main;
